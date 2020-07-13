@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="cssFiles/styleVisitors.css">
+    <link rel="stylesheet" href="cssFiles/normalaizer.css">
+
+    <title>Visitors</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="beginer">Библиотека</h1>
+        <nav class="header_nav">
+           
+               <a class="nav_item" href="index.html">Книги</a>
+               <a class="nav_item" href="visitors.html">Абоненты</a>
+               <a class="nav_item" href="cards.html">Карточки</a>
+                <a class="nav_item" href="statistic.html">Статистика</a>
+            
+        </nav>
+        <div class="head_section">
+        <h2 class="beginer">Абоненты:</h2>
+        <input type="button" name="chuser" id="chuser" value="Новай Абонент">
+    </div>
+    <hr class="line">
+    </header>
+    <section class="searcheer">
+    <form action="#" method="GET" name="sort_search" class="searching">
+        <label for="sorting1">Сортировать :</label>
+        <select class="sorting" id="sorting1">
+            <option>Выберите категорию</option>
+            <option>ID</option>
+            <option>Ф.И.О.</option>
+        </select>
+        <input type="button" name="sort" class="button" value="Сортировать">
+    </form>
+    <form action="#" method="GET" name="search" class="searching">
+      
+        <span class="mar">Поиск абонента:</span>
+        <input type="text" placeholder="enter" class="sorting search1"> 
+        <input type="submit" name="sort" id="search-button" value="Поиск">
+    </form>
+    </section>
+    <section class="plaite" id="plaite1">
+        <div class="forms">
+            <div class="closet">&times;</div>
+<form action="#" method="POST" name="user_form" class="create">
+    <div class="column">
+    <label for="name">Ф.И.О.</label>
+    <input class="create_item" type="text" name="name" id="visitor" placeholder="Ф.И.О">
+    <label for="tel">Телефон</label>
+    <input class="create_item" type="tel" name="telephone" id="telephone1"  placeholder="Номер телефона">
+</div>
+<div class="column">
+    <label for="age">Дата рождения</label>
+    <input class="create_item" type="text" id="age" placeholder="Дата рождения" >
+    <input class="create_item" type="hidden" name="number of id" id="indUser" value="redy">
+    <input class="create_item sub" type="submit" id="button" value="Создать">
+</div>
+</form>
+</div>
+    </section>
+
+    <section class = "table">
+            <table class="tabHead">
+                <tr>
+                <th>id</th>
+                <th>Ф.И.О.</th>
+                <th>Номер телефона</th>
+                <!-- <th>Карточка</th>        -->
+               <th>Изменить</th>
+                <th>Удалить</th>
+            </tr>
+            </table>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="jsFiles/jquery.maskedinput.min.js"></script>
+    <script src="jsFiles/functionsForAll.js"></script>
+    <script src="jsFiles/visitor.js"></script>
+    </body>
