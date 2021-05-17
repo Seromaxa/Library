@@ -1,0 +1,47 @@
+.wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+.open {
+  animation: open 0.3s linear;
+}
+.delete {
+  animation: close 0.3s linear both;
+}
+.closer {
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes open {
+  0% {
+    top: -100%;
+    bottom: 100%;
+  }
+  100% {
+    top: 0;
+    bottom: 0;
+  }
+}
+@keyframes close {
+  0% {
+    top: 0;
+    bottom: 0;
+  }
+  100% {
+    top: 100%;
+    bottom: -100%;
+  }
+}
