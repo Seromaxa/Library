@@ -4,6 +4,7 @@ export default class Logo {
     this.baner = options.baner
     this.text = options.text
     this.imagen = options.imagen
+    this.alt = options.alt ? options.alt : "imagen"
 
     this.rootStyle = options.rootStyle ? options.rootStyle : "root_default"
     this.textStyle = options.textStyle ? options.textStyle : "text_default"
@@ -22,6 +23,7 @@ export default class Logo {
     this.text ? (this._text = document.createElement(this.underBaner)) : null
     this.imagen ? (this._imagen = document.createElement("img")) : null
     this._imagen ? this._imagen.setAttribute("src", this.imagen) : null
+    this._imagen ? this._imagen.setAttribute("alt", this.alt) : null
 
     this._baner
       ? (this._baner.textContent = this.baner) &&

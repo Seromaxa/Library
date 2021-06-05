@@ -1,10 +1,10 @@
 import "./form.css"
 export default class Form {
-  constructor(items = [], styles = {}) {
+  constructor(styles = {}) {
     this._el = document.createElement("form")
     this.button = styles.button
     this.defaultButton = document.createElement("button")
-    this.items = items
+    this.items = styles.items ?? []
     this.submitHandler = styles.onSubmit
     this.formCls = styles.formCls ? styles.formCls : "form_default"
     this.submiter = this.submiter.bind(this)

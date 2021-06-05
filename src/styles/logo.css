@@ -1,14 +1,24 @@
-.logo-wrapper {
-  width: 30%;
+.wrapper_logo_header {
+  width: 25%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* padding: 1% 0; */
+  align-items: center;
+  justify-content: center;
 }
-.hero,
-.under-hero {
-  text-align: center;
+.header_imagen {
+  order: 1;
+  width: 35%;
+  height: auto;
+  flex-grow: 1;
 }
-.hero {
+.logo_baner {
+  order: 2;
   margin: 0;
 }
-.under-hero {
+.logo_text {
+  order: 3;
   font-size: 0.8rem;
-  margin: -0.5em 0 0;
 }

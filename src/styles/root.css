@@ -1,1 +1,8 @@
 @import url("normalize.css");
+@import "./header.css";
+@import "./logo.css";
+@import "./header_navigation.css";
+
+* {
+  box-sizing: border-box;
+}

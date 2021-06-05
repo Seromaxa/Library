@@ -16,7 +16,7 @@ export default class Popup {
   }
 
   create() {
-    this.root.classList.add("wrapper")
+    this.root.classList.add("wrapper_popup")
     this.closer.classList.add("closer")
     this.closer.setAttribute("id", "close")
     this.closer.innerHTML = "&#10008;"
@@ -31,6 +31,7 @@ export default class Popup {
   start() {
     return this.root
   }
+
   close() {
     this.root.classList.remove("open")
     this.root.classList.add("delete")
