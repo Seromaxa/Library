@@ -2,6 +2,8 @@ import Nav from "../components/navigation/navigation"
 import Form from "../components/UI/form/form"
 import Input from "../components/UI/input/input"
 import Button from "../components/UI/button/button"
+import Burger from "../components/UI/burger/burger"
+import BookPopup from "./popupBook"
 
 export default function createNavigation(search) {
   const searchInput = new Input({
@@ -21,6 +23,20 @@ export default function createNavigation(search) {
     root: "header_nav_search_button",
     color: "header_nav_search_button_color",
   })
+
+  const enterButton = new Button({
+    text: "Войти",
+    root: "header_nav_enter_button",
+    color: "header_nav_enter_button_color",
+    position: "header_nav_enter_button_margin",
+    onClick: test,
+  })
+  function test() {
+    const root = document.getElementById("root")
+
+    closeNav()
+  }
+
   const searchForm = new Form({
     items: [searchInput],
     formCls: "header_nav_search_form",
@@ -33,13 +49,26 @@ export default function createNavigation(search) {
       } else {
         search(searchInput.current)
         searchInput.reset()
+        closeNav()
       }
     },
   })
 
-  const nav = new Nav({
-    items: searchForm,
-    style: "header_nav",
+  const burger = new Burger({
+    onClick() {
+      nav.change()
+    },
   })
+
+  const nav = new Nav({
+    items: [searchForm, enterButton, burger],
+    style: "header_nav",
+    animationOn: "header_nav_active",
+    animationOff: "header_nav_unactive",
+  })
+  function closeNav() {
+    !nav.action ? null : nav.change()
+    !burger.action ? null : burger.change()
+  }
   return nav
 }

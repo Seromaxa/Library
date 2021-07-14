@@ -11,3 +11,10 @@
 .header_background_default {
   background: chartreuse;
 }
+
+@media screen and (min-width: 280px) {
+  .header_default {
+    padding: 0.9rem 10px;
+    flex-wrap: wrap;
+  }
+}

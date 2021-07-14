@@ -77,7 +77,9 @@ export default class Select {
 
   #setup() {
     this.clickHandler = this.clickHandler.bind(this)
+
     this._root.addEventListener("click", this.clickHandler)
+
     this._arrow = this._el.querySelector('[data-type="arrow"]')
     this._value = this._el.querySelector('[data-type="value"]')
   }
@@ -151,9 +153,9 @@ export default class Select {
   plaseholder - первое значение
   styles = {
   
-    каждое поле содержит название класс 
+    каждое поле содержит название класс (css)
 
-    root: стили для зщдительского элемента 
+    root: стили для родительского элемента 
     input: заглавный элемент 
     dropdown: элемент держащий список
     list: список

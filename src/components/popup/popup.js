@@ -1,9 +1,11 @@
 import "./popup.css"
 export default class Popup {
-  constructor(item) {
+  constructor(items = {}) {
     this.root = document.createElement("div")
     this.closer = document.createElement("div")
-    this.item = item
+    this.item = items.item
+    this.open = items.open ? items.open : "open"
+    this.off = items.off ? items.off : "delete"
     this.closeHandler = this.closeHandler.bind(this)
     this.create()
   }
@@ -17,6 +19,7 @@ export default class Popup {
 
   create() {
     this.root.classList.add("wrapper_popup")
+    this.root.classList.add(this.open)
     this.closer.classList.add("closer")
     this.closer.setAttribute("id", "close")
     this.closer.innerHTML = "&#10008;"
@@ -33,8 +36,8 @@ export default class Popup {
   }
 
   close() {
-    this.root.classList.remove("open")
-    this.root.classList.add("delete")
+    this.root.classList.remove(this.open)
+    this.root.classList.add(this.off)
     setTimeout(() => {
       this.destroy()
     }, 1000)
@@ -46,3 +49,8 @@ export default class Popup {
     this.root.remove()
   }
 }
+
+/* 
+item = item which popup wrapping
+open/off = css class which include animation like: .open{animation:open .3s leaner}
+*/

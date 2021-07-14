@@ -33,8 +33,13 @@ export default function createPopup(state, tab) {
     return year
   }
 
-  const year = new Select(years(1900, new Date().getFullYear()), "year")
-  const form = new Form([genres, author, book, house, copys, year], {
+  const year = new Select(
+    years(1900, new Date().getFullYear()),
+    "year",
+    "Год выпуска"
+  )
+  const form = new Form({
+    items: [genres, author, book, house, copys, year],
     onSubmit(ev) {
       ev.preventDefault()
       state.push(
@@ -52,6 +57,6 @@ export default function createPopup(state, tab) {
     },
   })
 
-  const popup = new Popup(form)
+  const popup = new Popup({ item: form })
   return popup
 }

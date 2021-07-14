@@ -1,12 +1,22 @@
+"use strict"
 import "./styles/root.css"
 import createHeader from "./conteiners/header"
+import BookPopup from "./conteiners/popupBook"
 
 function app() {
   const root = document.getElementById("root")
-  root.insertAdjacentElement("afterbegin", createHeader().start())
+  root.insertAdjacentElement("afterbegin", createHeader(serch).start())
+}
+function serch(string) {
+  console.log(string)
 }
 
 app()
+
+// function alasetState(state){
+//   toolbar.state = state
+//   toolbar.rerender()
+// }
 
 // const state = []
 // let count = 0
