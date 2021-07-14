@@ -1,0 +1,7 @@
+.navigation_default {
+  width: 100%;
+  display: flex;
+  padding: 1rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+}

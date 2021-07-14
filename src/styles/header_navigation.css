@@ -1,0 +1,120 @@
+.header_nav {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.header_nav_search_form {
+  display: flex;
+  justify-content: space-evenly;
+  width: calc(320px - 2 * (100vw - 320px) / 768);
+}
+.header_nav_search_submit {
+  margin: 0;
+  height: 30px;
+}
+.header_nav_search_input {
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+  font-size: 18px;
+  color: #555;
+  padding: 3% 0 2% 5%;
+  border-radius: 25px;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+.header_nav_search_input:focus {
+  box-shadow: -8px -8px 8px #fff, 8px 8px 8px #cbced1;
+}
+.header_nav_input_wrapper {
+  width: 65%;
+  position: relative;
+}
+.header_nav_search_button {
+  width: 30%;
+  max-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  border-radius: 25px;
+  border-style: none;
+}
+.header_nav_search_button_color {
+  color: #555;
+  outline: none;
+  box-shadow: 10px 10px 20px #cbced1, -10px -10px 20px #fff;
+}
+.header_nav_search_button_color:active {
+  box-shadow: inset 10px 10px 20px #cbced1, inset -10px -10px 20px #fff;
+}
+.header_nav_search_warning {
+  margin-left: 5%;
+  width: 205px;
+  color: red;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+.header_nav_enter_button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.header_nav_enter_button_color {
+  color: #555;
+}
+.header_nav_enter_button_color:hover {
+  color: rgb(255, 88, 88);
+}
+
+@media screen and (max-width: 620px) {
+  .header_nav {
+    width: 100%;
+    max-width: 320px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    padding-top: calc(90px + 2 * (100vw - 320px) / 870);
+  }
+  .header_nav_search_form {
+    margin-bottom: 45px;
+  }
+  .header_nav_enter_button {
+    font-size: 2em;
+    color: #cbced1;
+  }
+  .header_nav_enter_button_margin {
+    margin-left: 40%;
+  }
+}
+.header_nav_active {
+  animation: on 0.5s ease-in both;
+}
+.header_nav_unactive {
+  animation: off 0.5s ease-in;
+}
+@keyframes on {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes off {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -100%;
+  }
+}

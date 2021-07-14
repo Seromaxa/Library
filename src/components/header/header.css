@@ -1,0 +1,20 @@
+.header_default {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 3rem;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.header_background_default {
+  background: chartreuse;
+}
+
+@media screen and (min-width: 280px) {
+  .header_default {
+    padding: 0.9rem 10px;
+    flex-wrap: wrap;
+  }
+}

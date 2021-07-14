@@ -1,0 +1,16 @@
+.input_wrapper_default {
+}
+.input_default {
+  outline: none;
+}
+.input_span_default {
+  display: block;
+  text-transform: lowercase;
+  font-size: 0.9rem;
+}
+.input_warning_default {
+  display: block;
+  text-transform: lowercase;
+  font-size: 0.9rem;
+  color: red;
+}

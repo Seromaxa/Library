@@ -1,0 +1,123 @@
+.root__default {
+  width: 200px;
+  margin: 50px auto 0;
+}
+.select__wrapper {
+  width: 100%;
+  position: relative;
+}
+.select__input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+.select__input__default {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 25px;
+  background: #fff;
+}
+
+.select__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  z-index: 1;
+}
+.select__dropdown::-webkit-scrollbar {
+  width: 0;
+}
+.select__dropdown:hover::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 8px;
+  background: #cfd8dc;
+}
+
+.select__dropdown:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.5);
+  border-radius: 30px;
+  border: 2px solid #cfd8dc;
+}
+
+.select__dropdown_default {
+  max-height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.1);
+}
+
+.select__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.select__wrapper.open .select__dropdown {
+  display: block;
+  /* border-top: none; */
+  border-radius: 0 0 5px;
+}
+.select__wrapper.open .select__input__default {
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+
+.select_item__default {
+  padding: 3%;
+  border-bottom: 1px solid #ccc;
+  &:hover {
+    background: #cfd8dc;
+    cursor: pointer;
+    transition: 0.2s background ease-in;
+  }
+  &:active {
+    background: #eee;
+    transition: 0.1s background ease-in;
+  }
+}
+
+.selected_default {
+  background: rgba(65, 105, 225, 0.5);
+}
+
+.select__backdrop {
+  position: fixed;
+  display: none;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: transparent;
+}
+.select__wrapper.open .select__backdrop {
+  display: block;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+@for $i from 1 through 100 {
+  .select_list_default_animation > li:nth-child(#{$i}) {
+    animation: right 0.5s linear 0.1s * $i both;
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.test {
+  background-color: red;
+}

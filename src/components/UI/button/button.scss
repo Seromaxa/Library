@@ -1,0 +1,62 @@
+.button_default {
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  font-size: 1.2rem;
+
+  .button_span_default {
+    color: transparent;
+    background-image: linear-gradient(0deg, #ee82da 0%, #fefafd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+  }
+  &::before {
+    content: "";
+    display: block;
+    height: 0.2rem;
+    position: absolute;
+    top: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 15%);
+    background: rgba($color: #ffff, $alpha: 0.3);
+    border-radius: 100%;
+    opacity: 0.7;
+    background-image: linear-gradient(
+      -270deg,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 20%,
+      #ffffff 80%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
+
+.button_default_color {
+  background-image: linear-gradient(-180deg, #ff89d6 0%, #c01f9e 100%);
+  box-shadow: 0 1rem 1.25rem 0 rgba(22, 75, 195, 0.5),
+    0 -0.25rem 1.5rem rgba(110, 15, 155, 1) inset,
+    0 0.75rem 0.5rem rgba(255, 255, 255, 0.4) inset,
+    0 0.25rem 0.5rem 0 rgba(180, 70, 207, 1) inset;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-image: linear-gradient(-100deg, #ff89d6 0%, #c01f9e 180%);
+    box-shadow: 0 0.5rem 1.25rem 0 rgba(22, 75, 195, 0.5),
+      0 -0.25rem 1.5rem rgba(110, 15, 155, 1) inset,
+      0 0.75rem 0.5rem rgba(255, 255, 255, 0.4) inset,
+      0 1.25rem 0.5rem 0 rgba(180, 70, 207, 1) inset;
+  }
+  &:active {
+    box-shadow: 0 0 1.25rem 0 rgba(22, 75, 195, 0.5),
+      0 -0.25rem 1.5rem rgba(110, 15, 155, 1) inset,
+      0 1.25rem 0.5rem 0 rgba(180, 70, 207, 1) inset;
+  }
+  &:active.button_default::before {
+    width: 20%;
+  }
+}
+.button_position_default {
+  margin: 10px 10px;
+}
