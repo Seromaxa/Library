@@ -1,8 +1,12 @@
 @import url("normalize.css");
+@import "./variables.css";
 @import "./header.css";
 @import "./logo.css";
 @import "./header_navigation.css";
 
 * {
   box-sizing: border-box;
+}
+#root {
+  background-color: #eee;
 }

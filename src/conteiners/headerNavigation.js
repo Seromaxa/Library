@@ -3,7 +3,6 @@ import Form from "../components/UI/form/form"
 import Input from "../components/UI/input/input"
 import Button from "../components/UI/button/button"
 import Burger from "../components/UI/burger/burger"
-import BookPopup from "./popupBook"
 
 export default function createNavigation(search) {
   const searchInput = new Input({

@@ -1,0 +1,79 @@
+.default_table {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.default_borders {
+  border: 1px solid #ccc;
+}
+
+.default_data {
+  text-align: center;
+}
+.default_heders:nth-child(1) {
+  width: 45%;
+}
+.default_heders:nth-child(4) {
+  max-width: 60px;
+}
+
+.default_row:nth-child(odd) {
+  background-color: #ccc;
+}
+[data-name="name"] {
+  position: relative;
+}
+.default_tooltip {
+  position: absolute;
+  visibility: hidden;
+  left: -20%;
+  bottom: 100%;
+  max-width: 250px;
+  max-height: 150px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 7px;
+  z-index: 101;
+}
+
+.default_row:hover {
+  color: rgb(255, 115, 0);
+  cursor: pointer;
+  background-color: royalblue;
+}
+[data-name="name"]:hover .default_tooltip {
+  visibility: visible;
+  color: #000;
+}
+
+@media (max-width: 450px) {
+  .default_tooltip {
+    right: -90%;
+    left: auto;
+  }
+  .default_table {
+    width: 90%;
+  }
+  .default_heders {
+    font-size: 18px;
+    word-break: break-all;
+  }
+
+  .default_data {
+    word-break: break-all;
+  }
+
+  .default_heders:nth-child(1),
+  .default_data:nth-child(1),
+  .default_heders:nth-child(2),
+  .default_data:nth-child(2) {
+    width: 50%;
+  }
+
+  .default_heders:nth-child(3),
+  .default_heders:nth-child(4),
+  .default_data:nth-child(3),
+  .default_data:nth-child(4) {
+    display: none;
+  }
+}

@@ -1,11 +1,31 @@
 "use strict"
 import "./styles/root.css"
 import createHeader from "./conteiners/header"
-import BookPopup from "./conteiners/popupBook"
+import Table from "./components/table/table"
+import { state } from "./debug/book"
 
 function app() {
   const root = document.getElementById("root")
   root.insertAdjacentElement("afterbegin", createHeader(serch).start())
+
+  const buffer = state.map((item) => {
+    return { ...item, action: item.copy.length }
+  })
+
+  const testTable = new Table({
+    headers: {
+      ["Название"]: "name",
+      ["Автор"]: "author",
+      ["Жанр"]: "genre",
+      ["Копий"]: "action",
+    },
+    items: buffer,
+    onClick(ev) {
+      console.log(ev)
+    },
+  })
+
+  root.insertAdjacentElement("beforeend", testTable.start())
 }
 function serch(string) {
   console.log(string)
