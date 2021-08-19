@@ -1,3 +1,4 @@
+"use strict"
 import "./burger.css"
 export default class Burger {
   constructor(styles = {}) {

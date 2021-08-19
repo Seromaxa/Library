@@ -1,4 +1,6 @@
+"use strict"
 import "./logo.css"
+
 export default class Logo {
   constructor(options = {}) {
     this.baner = options.baner

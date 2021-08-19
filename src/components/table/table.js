@@ -1,3 +1,4 @@
+"use strict"
 import "./table.css"
 
 export default class Table {
@@ -6,6 +7,7 @@ export default class Table {
     this.headers = options.headers ?? {}
     this.items = options.items ?? []
     this.onClick = options.onClick
+    this.rebuld = options.rebuld
     this.style = options.style
       ? {
           table: options.style.table ?? "default_table",
@@ -30,6 +32,7 @@ export default class Table {
     this.#setUp()
   }
   #create() {
+    this.rebuld ? this.rebuld() : null
     let header = Object.keys(this.headers)
     let body = new DocumentFragment()
     let headRow = document.createElement("tr")
@@ -69,11 +72,13 @@ export default class Table {
   }
 
   clickHandler(ev) {
-    this.onClick ? this.onClick(ev.target.dataset.id) : null
+    this.onClick ? this.onClick(ev) : null
   }
   rerender() {
+    this._el.innerHTML = null
     this.#create()
   }
+
   start() {
     return this._el
   }
@@ -89,6 +94,15 @@ export default class Table {
 //   ["Название книги"]: "name",
 //   ...
 //   и т.д.
+// option.rebuld - если нужно как либо изменить поле
+
+// rebuld() {
+//   return (this.items = this.items.map((item) => {
+//     let active = item.copy.filter((it) => it.onHand).length
+//     let unactive = item.copy.filter((it) => !it.onHand).length
+//     return { ...item, copy: `${unactive}/${active}` }
+//   }))
+// },
 // }
 
 //////////////////criete var 1 //////////

@@ -1,3 +1,4 @@
+"use strict"
 import Nav from "../components/navigation/navigation"
 import Form from "../components/UI/form/form"
 import Input from "../components/UI/input/input"

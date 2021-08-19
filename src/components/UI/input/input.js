@@ -1,3 +1,4 @@
+"use strict"
 import "./input.css"
 
 export default class Input {

@@ -27,7 +27,7 @@
   position: absolute;
   visibility: hidden;
   left: -20%;
-  bottom: 100%;
+  top: -50%;
   max-width: 250px;
   max-height: 150px;
   overflow: hidden;

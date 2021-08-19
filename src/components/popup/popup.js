@@ -1,3 +1,4 @@
+"use strict"
 import "./popup.css"
 export default class Popup {
   constructor(items = {}) {

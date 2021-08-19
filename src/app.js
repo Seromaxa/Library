@@ -2,36 +2,53 @@
 import "./styles/root.css"
 import createHeader from "./conteiners/header"
 import Table from "./components/table/table"
+import Button from "./components/UI/button/button"
 import { state } from "./debug/book"
 
-function app() {
+function app(some) {
   const root = document.getElementById("root")
   root.insertAdjacentElement("afterbegin", createHeader(serch).start())
 
-  const buffer = state.map((item) => {
-    return { ...item, action: item.copy.length }
-  })
+  
+
+  const state1 = [...state]
 
   const testTable = new Table({
     headers: {
       ["Название"]: "name",
       ["Автор"]: "author",
       ["Жанр"]: "genre",
-      ["Копий"]: "action",
+      ["Копий"]: "copy",
     },
-    items: buffer,
+    items: some,
     onClick(ev) {
-      console.log(ev)
+      some = some.filter((item) => item.id != ev.target.dataset.id)
+      this.items = some
+      this.rerender()
+    },
+
+    rebuld() {
+      return (this.items = this.items.map((item) => {
+        let active = item.copy.filter((it) => it.onHand).length
+        let unactive = item.copy.filter((it) => !it.onHand).length
+        return { ...item, copy: `${unactive}/${active}` }
+      }))
     },
   })
-
   root.insertAdjacentElement("beforeend", testTable.start())
+  const button = new Button({
+    onClick() {
+      some.splice(0, 1)
+      testTable.items = some
+      testTable.rerender()
+    },
+  })
 }
 function serch(string) {
   console.log(string)
 }
 
-app()
+app(state)
 
 // function alasetState(state){
 //   toolbar.state = state

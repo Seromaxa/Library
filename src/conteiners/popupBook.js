@@ -1,3 +1,4 @@
+"use strict"
 import Form from "../components/UI/form/form"
 import Select from "../components/UI/select/select"
 import Input from "../components/UI/input/input"

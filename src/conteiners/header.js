@@ -1,3 +1,4 @@
+"use strict"
 import Header from "../components/header/header"
 import Logo from "../components/logo/logo"
 import Img from "../assets/book.svg"

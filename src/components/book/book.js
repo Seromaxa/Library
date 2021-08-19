@@ -1,3 +1,4 @@
+"use strict"
 export default class Book {
   constructor(options = {}) {
     this.name = options.name

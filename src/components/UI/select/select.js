@@ -1,3 +1,4 @@
+"use strict"
 import "./select.scss"
 
 export default class Select {

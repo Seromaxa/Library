@@ -1,3 +1,4 @@
+"use strict"
 import "./form.css"
 export default class Form {
   constructor(styles = {}) {

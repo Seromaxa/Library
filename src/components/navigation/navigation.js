@@ -1,3 +1,4 @@
+"use strict"
 import "./nav.css"
 export default class Nav {
   constructor(options = {}) {

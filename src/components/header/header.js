@@ -1,3 +1,4 @@
+"use strict"
 import "./header.css"
 export default class Header {
   constructor(options = {}) {
